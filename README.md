@@ -1,5 +1,11 @@
 # Automation Roadshow 101
 
+```yaml
+Author: David Gee
+Copyright: David Gee, Juniper Networks, 2018
+License: Apache2
+```
+
 This README contains information to experiment with Junos alongside automation discussions and workshops.
 
 Use [this](https://hub.docker.com/r/davidjohngee/juniper-gitlab-container/) Docker container as a base of operations and mount this directory as a volume for the container.
