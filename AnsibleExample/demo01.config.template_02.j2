@@ -1,0 +1,10 @@
+interfaces {
+{% for item in interfaces %}
+    replace:
+    {{ item.name }} {
+        unit {{ item.unit }} {
+            description {{ item.description }};
+        }
+    }
+{% endfor %}
+}

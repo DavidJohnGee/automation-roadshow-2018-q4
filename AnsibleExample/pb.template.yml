@@ -1,0 +1,13 @@
+---
+ - name: render a template to create interface junos configuration
+   hosts: "{{ target }}"
+   connection: local
+   gather_facts: no
+
+   tasks:
+
+    - name: Render interface configuration for junos devices
+      template: 
+        src: "{{ playbook_dir }}/{{ target }}.config.template_02.j2" 
+        dest: "{{ playbook_dir }}/{{ inventory_hostname }}.ifaces.conf"
+

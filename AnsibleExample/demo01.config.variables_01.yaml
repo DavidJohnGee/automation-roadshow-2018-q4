@@ -1,0 +1,4 @@
+# File containing variables for interface config
+interface: ge-0/0/3
+unit: 0
+description: "cpe"

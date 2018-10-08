@@ -1,0 +1,10 @@
+test_interface_status:
+  - command: show interfaces ge-0/0/3
+  - item:
+      xpath: physical-interface/logical-interface
+      id: './name'
+      tests:
+        - is-equal: description, cpe
+          err: "Test Failed!! admin-status  got changed, before it was
+               <{{pre['description']}}>, now it is <{{post['description']}}>"
+          info: "Test Passed!! admin-status is same, before it is <{{pre['description']}}> now it is <{{post['description']}}>"
