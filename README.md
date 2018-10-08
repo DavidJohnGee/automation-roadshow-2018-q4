@@ -616,6 +616,41 @@ Ansible can be used for much more than just templating configuration and part of
 ansible-playbook pb.template.yml --extra-vars target=demo01 --syntax-check
 ```
 
+So now let's look at pushing configuration to a Junos device with the config file we just generated.
+
+```bash
+ansible-playbook pb.push.yml --extra-vars target=demo01
+```
+
+## Testing Basics
+
+Testing is an important phase in any mechanized process and testing with Junos is simple thanks to it's built in programmability and tools like JSNAP(y), which takes snapshots of pre and post state changes, then runs a set of user created tests to validate desired state. This is great for upgrades and configuration changes alike.
+
+Change directory to the JSNAPy directory.
+
+```bash
+jsnapy --snap pre -f iface_check.yml
+# Make some changes
+jsnapy --snap post -f iface_check.yml
+jsnapy --check pre post -f iface_check.yml
+```
+
+Other frameworks like Robot Framework exist but are more complex initially and require some time investment. 
+
+__Robot__
+
+Here is a simple Robot Test Framework example. Go to the Robot directory.
+
+```bash
+pip install robotframework
+sudo pip install -U robotframework-requests
+sudo pip install -U requests
+
+# Run the test
+
+robot test1.robot
+```
+
 
 
 
