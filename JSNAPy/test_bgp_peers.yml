@@ -1,0 +1,21 @@
+tests_include:
+  - test_bgp_peers
+  - test_down_bgp_peers
+
+test_bgp_peers:
+  - command: show bgp summary
+  - item:
+      xpath: '//bgp-information'
+      tests:
+        - all-same: peer-count
+          err: "Test Failed!! Previous count: <{{pre['peer-count']}}>, post count: <{{post['peer-count']}}>"
+          info: "Test Passed!! Previous count: <{{pre['peer-count']}}>, post count: <{{post['peer-count']}}>"
+
+test_down_bgp_peers:
+  - command: show bgp summary
+  - item:
+      xpath: '//bgp-information'
+      tests:
+        - all-same: down-peer-count
+          err: "Test Failed!! Previous count: <{{pre['down-peer-count']}}>, post count: <{{post['down-peer-count']}}>"
+          info: "Test Passed!! Previous count: <{{pre['down-peer-count']}}>, post count: <{{post['down-peer-count']}}>"
