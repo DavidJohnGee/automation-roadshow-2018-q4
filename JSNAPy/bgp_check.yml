@@ -1,0 +1,7 @@
+# Example from JNSAPy guide.
+hosts:
+  - device: 192.168.10.86
+    username: updaterservice
+    passwd: Passw0rd
+tests:
+  - test_bgp_peers.yml 
