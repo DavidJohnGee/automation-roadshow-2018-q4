@@ -1,0 +1,14 @@
+{
+    "host": "p1.ipengineer.net",
+    "port": 32767,
+    "user": "root",
+    "password": "Passw0rd",
+    "cid": "jtimon1",
+    "grpc" : {
+        "ws" : 524288
+    },
+    "paths": [{
+        "path": "/interfaces",
+        "freq": 2000
+    }]
+}
